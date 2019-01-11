@@ -1,0 +1,33 @@
+ <form #regsiterForm="ngForm" (ngSubmit)="regsiterForm.form.valid && postnewUser(regsiterForm)" novalidate>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="newUserName">Name</label>
+                <input type="text" class="form-control rounded-0 form-control-sm" [(ngModel)]="newUser.newUserName" #newUserName="ngModel" name="newUserName" id="newUserName"
+                [ngClass]="{
+                  'is-invalid': newUserName.invalid && (newUserName.dirty || newUserName.touched)}" placeholder="" autocomplete="off"
+                 required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="newUserEmail">Email</label>
+                <input type="text" class="form-control rounded-0 form-control-sm" [(ngModel)]="newUser.newUserEmail" #newUserEmail="ngModel" id="newUserEmail" name="newUserEmail"
+                (ngModelChange)="emailchange($event)" placeholder="" autocomplete="off" required  [ngClass]="{
+                    'is-invalid': emailError || (newUserEmail.invalid && (newUserEmail.dirty || newUserEmail.touched))}">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="newUserMobile">Mobile</label>
+                <input type="text" class="form-control rounded-0 form-control-sm" [(ngModel)]="newUser.newUserMobile" #newUserMobile="ngModel" id="newUserMobile" name="newUserMobile" placeholder="" autocomplete="off"
+                required (ngModelChange)="mobilechange($event)"  [ngClass]="{
+                  'is-invalid': mobileError || (newUserMobile.invalid && (newUserMobile.dirty || newUserMobile.touched))}">
+              </div>
+            </div>
+            
+            <div class="btn-group" role="group" aria-label="registeration button">
+              <button type="submit" class="btn btn-success border-0 rounded-0 shadow" [disabled]="!regsiterForm.form.valid && !submitted" [ngClass]="{
+                'disabled': mobileError || emailError}">
+              Signup
+                <i class="fa fa-sign-in pl-2" aria-hidden="true"></i>
+              </button>
+            </div>
+          </form>
