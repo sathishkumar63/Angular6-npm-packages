@@ -32,6 +32,36 @@ public emailchange(newValue) {
     this.mobileError = true;
     }
   }
+  public onFileChanged(event) {
+    this.selectedFile = <File>event.target.files;
+    this.filelength = event.target.files.length;
+    if (this.selectedFile != null) {
+      this.btndisabled = false;
+      console.log(event);
+      console.log(this.selectedFile);
+      console.log(this.filelength);
+    } else {
+      this.btndisabled = true;
+    }
+  }
+  public onUpload() {
+   
+    const uploadData = new FormData(); // Currently empty
+    for (let i = 0; i < this.filelength; i++) {
+      uploadData.append('myFile' + i, this.selectedFile[i], this.selectedFile[i].name);
+    }
+    uploadData.append('imagelength', this.filelength);
+    this.data.postFileX(uploadData, 'logoupload').then((result) => {
+      this.responseData = result;
+   if (this.responseData.Status === 'true') {
+    this.selectedFile = null;
+    this.btndisabled = true;
+    this.getlogo();
+   } else {this.btndisabled = false; }
+    }, (err) => {
+      console.log(err);
+    });
+  }
   public postnewUser(regsiterForm: NgForm) {
   
     this.data.postDataX(this.newUser, 'newUser').then((result) => {
