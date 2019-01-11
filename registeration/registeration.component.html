@@ -22,10 +22,16 @@
                   'is-invalid': mobileError || (newUserMobile.invalid && (newUserMobile.dirty || newUserMobile.touched))}">
               </div>
             </div>
-            
+            <div class="input-group">
+                <div class="custom-file">
+                  <input type="file" class="form-control custom-file-input" id="selectlogo" (change)="onFileChanged($event)"
+                    autocomplete="off" required aria-label="selectlogo" multiple>
+                  <label class="form-control custom-file-label" for="selectlogo">Choose file...</label>
+                </div>
             <div class="btn-group" role="group" aria-label="registeration button">
-              <button type="submit" class="btn btn-success border-0 rounded-0 shadow" [disabled]="!regsiterForm.form.valid && !submitted" [ngClass]="{
-                'disabled': mobileError || emailError}">
+              <button type="submit" class="btn btn-success border-0 rounded-0 shadow" [disabled]="!regsiterForm.form.valid && !submitted"
+                      [ngClass]="{
+                'notallowed disabled': mobileError || emailError || btndisabled}">
               Signup
                 <i class="fa fa-sign-in pl-2" aria-hidden="true"></i>
               </button>
