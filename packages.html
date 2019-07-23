@@ -1,5 +1,3 @@
-npm install -g angular-cli@latest
-
 npm install popper.js
 
 npm install jquery
@@ -19,9 +17,13 @@ npm install --save sweetalert2 @toverux/ngx-sweetalert2
 
 npm install ng2-slim-loading-bar --save
 
+jenixece@gmail.com
+
 npm i -S @ngx-progressbar/core
 
 npm i -S @ngx-progressbar/router
+
+npm install npm@latest -g
 
 npm i -S @ngx-progressbar/http
 
@@ -55,3 +57,62 @@ ng build --prod --base-href=/name/
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
+
+ng add @angular/pwa
+npm install -g http-server
+ng build --prod
+http-server -c-1 dist\pwa-example
+
+npm install -g firebase-tools
+
+ng add @angular/material
+npm install --save @angular/material @angular/cdk
+npm install --save hammerjs
+npm install --save-dev @types/hammerjs
+import 'hammerjs'; // src/main.js
+"types": ["hammerjs"] // tsconfig.app.json  
+
+@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
+    @import '~https://fonts.googleapis.com/icon?family=Roboto';
+    body {font-family: Roboto; }
+    @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css"; //styles.css
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> // index.html
+npm install --save @angular/animations
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; //src/app/app.module.ts
+
+imports: [BrowserAnimationsModule]
+
+ng generate @angular/material:material-nav --name sidenav
+ng generate @angular/material:materialNav --name=main-nav --style=sass 
+
+ng g c welcome --module app.module
+
+ng g c customer/customer --flat
+
+// from new folder - auth
+ng g g auth
+
+npm install --save bcrypt jsonwebtoken
+
+Npm install http-server@0.11.1 --save-dev
+
+npm i -g http-server
+http://127.0.0.1:8080/
+
+newsAPI = 72565da7730649abb8c4c995efa6a588
+npm install --global @angular/cli@next
+ng add @angular/pwa@next --project=test-app
+
+http-server -p 8080 -c-1 dist/angular-pwa
+
+<div class="triangle"></div>
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-top: 20px solid #333;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+}
